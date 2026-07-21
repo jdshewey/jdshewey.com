@@ -8,17 +8,10 @@ export default function Header() {
         {resume.location} • {resume.email} • {resume.phonePreferred} (preferred) •{" "}
         {resume.phoneAlt}
       </p>
-      <p className="text-sm mt-1">
-        Portfolio:{" "}
-        <a href={resume.portfolio} className="text-blue-600" target="_blank" rel="noreferrer">
-          {resume.portfolio}
-        </a>
-      </p>
       <p className="text-sm mt-2">
-        Seeking roles: {resume.roles.join(" | ")}
-      </p>
-      <p className="text-sm">
-        Focus: {resume.focus.join(" | ")}
+	  Seeking / Experienced In
+	  {resume.roles.join(" | ")}<br></br>
+	  {resume.sme.join(" | ")}
       </p>
     </header>
   );

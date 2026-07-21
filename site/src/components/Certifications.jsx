@@ -5,7 +5,7 @@ export default function Certifications() {
     <section className="mb-6">
       <h2 className="text-xl font-semibold mb-2">Certifications</h2>
       <ul className="list-disc list-inside text-sm">
-        {resume.certifications.map((c) => (
+        {resume.certifications.current.map((c) => (
           <li key={c}>{c}</li>
         ))}
       </ul>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>James Shewey's Resumé</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="main_bg">
+<div id="main">
+<!-- header begins -->
+<div id="header">
+	<div id="logo"><h2>James Shewey</h2>Networking and Systems Administrator</div>
+    <div id="buttons">
+        <ul>
+          <li class="first"><a href="index.html"  title="">Home</a></li>
+		  <li><a href="resume.php" title="">Resumé</a></li>
+          <li><a href="portfolio.html" title="">Portfolio</a></li>
+          <li><a href="about.html" title="">About</a></li>
+          <li><a href="http://jdshewey.blogspot.com" class="last_b" title="">Blog</a></li>
+          <li ><a href="contact.html" title="" class="last_b">Contact</a></li>
+        </ul>
+    </div>
+</div>
+<!-- header ends -->
+    <!-- content begins -->
+    	<div id="content">
+<div class="left_r">
+<center>
+<h2>Downloads</h2>
+<br>
+<h3>Letters</h3>
+<a href="./Portfolio/Commendation.pdf">NHA Commendation</a><br>
+<a href="./Portfolio/Customer%20positive%20review.pdf">Customer Review</a><br>
+<a href="./Portfolio/Another%20Positive%20Review.pdf">Another Positive Review</a><br>
+<a href="./Portfolio/Managerial%20Letter%20of%20Reference.pdf">Managerial Letter of Reference</a><br>
+<br>
+<h3>Software</h3>
+<a href="https://github.com/jdshewey">My Github</a><br>
+<a href="./Portfolio/checkWitness.js">Check Witness</a><br>
+<a href="./Portfolio/Warranty Lookup.zip">Warranty Lookup</a><br>
+<a href="./Portfolio/CRC.zip">Cyclic Redundancy Check</a><br>
+<a href="./Portfolio/Fraction Class.zip">Fraction Class</a><br>
+</center>
+</div>
+
+            <div id="right">
+            	<div class="right_top"></div>
+              	<div class="right_s">
+<center><h1>Commendations and Letters of Reference</h1></center>
+<br>
+<h3>Network Health Assessment</h3>
+As Thrive Networks is a consulting company, they are often asked to come in an audit companies' systems and networks and highlight any weak spots. While this is not my primary duty, I have been needed in a few cases to assist with these assessments due to staff shortages. On the left, you will find an E-mail from the manager of the consulting services team commending me on a well done assessment which generated $8650 dollars of revenue for Thrive Networks.<br> 
+<br>
+<h3>Customer Reviews</h3>
+<p>While at F5, I frequently recieved perfect 10 customer surveys and maintained close to a 10/10 average. In fact, I never experienced a single quarter with less than an average of 9/10. These are E-mails from two different customers who were very happy with their service..
+<br>
+<h3>Managerial Letter of Reference</h3>
+<p>Chris Deehan, one of my Managers at F5 was kind enough to provide me with a letter of reference upon my departure.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center><h1>Programming Portfolio</h1></center>
+<br>
+<h2>PHP/Web</h2>
+<br>
+<h3>Check Witness</h3>
+<p>While working at F5, when an engineer was of shift customers would often update their tickets. In the event of an extended absence, this could become an issue because no one responds to the customer. To solve this problem, I wrote a program which would automatically check our workforce management system and then set up E-mail notifications in our E-mail notification system which would be sent to our ticketing routing team. This allowed them to watch for activity on cases that were assigned to an absent Engineer and re-assign them to an engineer who was on shift if necessary. This project is coded in node.js, Non-blocking (eg, doesn't pause for I/O operations, so is very event-driven)) server-side jQuery based language.</p><br>
+<br>
+<h3>Warranty Lookup Utility</h3>
+<p>Thrive Networks utilizes tools from managed services products such as Kaseya and N-able. Thrive is able to utilize these tools to obtain the serial number and manufacturer of workstations and servers that are monitored using these tools and then transmits them to a Warranty Lookup utility via the SOAP protocol. This php program accepts data in SOAP format using the open source <a href="http://sourceforge.net/projects/nusoap/">NuSOAP</a> library by NuSphere. 
+
+This utility then goes the manufacturer's web site and queries their warranty lookup form using page scraping techniques, formats the data in a standard format and then returns the data using the SOAP protocol.
+
+You can download a copy of the source code on the left. Unfortunately, most of these websites have changed their layouts so the warranty scrapes no longer work and with PHP5 the split() function has been depricated in favor of explode(), but this is still a good example of my php programming skill. 
+<br>
+<br>
+<br>
+<!--
+<h3>Rental Listing Management</h3>
+<br>
+---!>
+<h2>C++</h2>
+<br>
+<h3>Cyclic Redundancy Check</h3>
+<p>When data is transmitted across a network, there can often be times in which there are problems at the physical layer (E.g.: electro-magnetic interference, Locked up circuitry, Etc.) Therefore, networking equipment needs a way to verify that the data recieved matches the data transmitted. This is traditionally done using an algorithm called a Cyclic Redundancy Check.</p>
+
+<p>This algorithm works by dividing the data by a polynomial and appending the remainder to a footer of the frame/packet. The data is then transmitted and the recipient divides the data using again using the same polynomial. If the remainder is 0, then the statistical likelihood that the packet is unmodified is extremely high (>99.9%). The larger the polynomial (32 bits, 64 bits, etc.) the higher the statistical likelihood that the packet is un-modified.</p>
+
+<p>This is done in a binary system by taking the powers in the polynomial, converting them into a binary number and XORing the resulting number with the data stream if the leading digit is a 1. If the leading digit in the data stream is a 0, then we XOR the data with 0. We then append the remainder of the division to the packet/frame footer.</p>
+
+<p>On the left, you will find my implementation of a CRC. This was a problem assigned as a problem in my 400 level telecommunications class (I received an A) and accordingly, you will find 3 functions in the sample code: 1 to generate the hash, 1 to verify the data and 1 to randomly inject errors into the data stream during "transmission" as required by the professor in the assignment.In the zip file, you will find the source code and an EXE that can be run to see the code in action.</p>
+<br>
+<h3>Fraction Class</h3>
+<p>This C++ class can be included as a header to any program in which you would like to be able manage fractions. The data is stored in this class as a numerator and a denominator. The class will automatically calculate the greatest common denominator and store the fraction in a reduced format (therefore 2/4ths automatically becomes 1/2, etc.) and standard arithmatic operators are overloaded so that fractions can be added, divided subtracted or multiplied. Furthermore, there are functions which will coerce the fraction into various datatypes for times in which you need to deal with the decimal value of the fraction.</p>
+<p>You will find the source code for this program on the left and will find a driver for this program, a header file containing the class and an EXE with an implemention of the header for demonstrative purposes</p>
+
+              </div>
+            </div> 
+            <div style="clear: both"><img src="images/spaser.gif" alt="" width="1" height="1" /></div>
+     		</div>
+    <!-- content ends -->
+    <!-- footer begins -->
+    <div id="footer">
+  <center>© 2009, 2012<br>
+  Original design by <a href="http://www.metamorphozis.com/">Metamorphosis Design</a><br />
+  Derivitave work by James Shewey</center>
+<!-- footer ends -->
+</div>
+</div>
+</body>
+</html>
